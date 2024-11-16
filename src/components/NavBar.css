@@ -1,0 +1,83 @@
+.navbar {
+    background-color: #E34545;
+    display: flex;
+    align-items: center;
+    padding: 2em 3em;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.navbar-logo {
+    font-size: 2.5em;
+    color: white;
+    cursor: pointer; /* Add cursor pointer for clickable effect */
+}
+
+/* Navigation menu styles */
+.navbar_search_opts {
+    list-style: none;
+    margin-left: auto;
+    padding-right: 3em;
+    display: flex;
+    gap: 2em;
+    transition: transform 0.3s ease;
+}
+
+.navbar_search_opts li {
+    display: inline;
+}
+
+.navbar_search_opts a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar_search_opts a:hover {
+    color: #f0a500;
+}
+
+/* Responsive design for smaller screens */
+/* Show the icon on smaller screens (768px and below) */
+@media (max-width: 768px) {
+    .navbar-logo {
+        display: block;
+        font-size: 2em;
+        color: white;
+        cursor: pointer; /* Add cursor pointer for clickable effect */
+    }
+
+    /* Adjust the navbar layout for mobile */
+    .navbar {
+        padding: 1em 2em;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* Navigation menu adjustments */
+    .navbar_search_opts {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 70%;
+        max-width: 300px;
+        background-color: #E34545;
+        flex-direction: column;
+        padding: 2em;
+        gap: 1.5em;
+        align-items: flex-start;
+        transform: translateX(-100%);
+        z-index: 10;
+    }
+
+    .navbar_search_opts a {
+        font-size: 16px;
+    }
+
+    /* Show the menu when active */
+    .navbar_search_opts.active {
+        transform: translateX(0);
+    }
+}
